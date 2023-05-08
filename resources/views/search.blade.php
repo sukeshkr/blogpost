@@ -6,9 +6,8 @@
 
 
 
-    <form action="{{route('search.results')}}" method="POST">
+    <form action="{{route('search.results')}}" method="GET">
         @csrf
-        @method('POST')
         <div class="form-group">
 
     <div class="input-group">

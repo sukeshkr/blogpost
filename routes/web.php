@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/search', [PostController::class, 'index'])->name('search');
 
-Route::post('/search/results', [PostController::class, 'searchResult'])->name('search.results');
+Route::get('/search-results', [PostController::class, 'searchResult'])->name('search.results');
 
 
 require __DIR__.'/auth.php';

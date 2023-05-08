@@ -6,9 +6,8 @@
 
 
 
-    <form action="{{route('search.results')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('search.results')}}" method="GET">
         @csrf
-        @method('POST')
         <div class="form-group">
 
     <div class="input-group">
@@ -18,19 +17,18 @@
         </div>
 
       </div>
-
-      @if($posts->isNotEmpty())
-    @foreach ($posts as $post)
-        <div class="post-list">
+    @if($posts->isNotEmpty())
+        @foreach ($posts as $post)
+            <div class="post-list">
             <p>Title: {{ $post->title }}</p>
             <p>Content: {{ $post->content }}</p><br>
         </div>
-    @endforeach
-@else
-    <div>
-        <h2>No posts found</h2>
-    </div>
-@endif
+        @endforeach
+        @else
+            <div>
+            <h2>No posts found</h2>
+            </div>
+    @endif
 
 
         </div>
